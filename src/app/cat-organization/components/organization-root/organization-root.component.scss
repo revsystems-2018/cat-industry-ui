@@ -1,0 +1,22 @@
+@import "../../../../assets/grid/ssi-ui-variables";
+
+.organization-root {
+  display: flex;
+  flex-flow: row nowrap;
+  height: calc(100vh - #{$navHeightWithPadding});
+  width: 100%;
+}
+
+.organization-root-menu {
+  min-width: 15%;
+  overflow-x: auto;
+
+  border: 1px solid #e3e9ea;
+}
+
+.organization-root-content {
+  flex-grow: 1;
+  overflow-x: auto;
+
+  border: 1px solid #e3e9ea;
+}
