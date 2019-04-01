@@ -1,0 +1,45 @@
+<article class="incident-list">
+
+  <table *ngIf="products.length > 0" id="table" class="table table-striped incident-table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Catalog</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Stock</th>
+      <th scope="col">Price</th>
+      <th scope="col">Options</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let product of products; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ product.name }}</td>
+      <td>{{ product.description }}</td>
+      <td>{{ product.catalog.name }}</td>
+      <td>{{ product.brand.name }}</td>
+      <td>{{ product.stock }}</td>
+      <td>{{ product.price }}</td>
+      <td>
+        <div class="btn-group" role="group">
+          <button type="button"
+                  class="btn btn-outline-light fa fa-pencil"
+                  (click)="onUpdateAction($event, product)"></button>
+          <button type="button"
+                  class="btn btn-outline-warning fa fa-trash"
+                  (click)="onDeleteAction($event, product)"></button>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="products.length <= 0" class="jumbotron bg-transparent incidents-list-jumbotron">
+    <h1 class="display-4 text-center">Congratulations!</h1>
+    <hr class="my-4 incidents-list-jumbotron-divider">
+    <p class="lead">Your company doesn't have any incident until this moment.</p>
+  </div>
+
+</article>

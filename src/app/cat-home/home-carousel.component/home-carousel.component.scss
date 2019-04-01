@@ -1,7 +1,14 @@
+@import "./../../../assets/grid/ssi-ui-variables";
+@import "./../../../assets/grid/ssi-flexbox";
 
 .carousel {
   position: relative;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.64);
+}
+
+.carousel-img {
+  width: calc(100vw - 2px);
+  height: calc(100vh - #{$navHeight});
 }
 
 .carousel-inner {

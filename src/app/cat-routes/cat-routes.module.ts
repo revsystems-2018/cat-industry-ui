@@ -7,7 +7,9 @@ import {RouterModule} from '@angular/router';
 import {ROUTES_CONFIG} from './cat-routes';
 import {CatHomeModule} from '../cat-home/cat-home.module';
 import {SsiOrganizationModule} from '../cat-organization/ssi-organization.module';
-import {SsiIncidentModule} from '../cat-incident/ssi-incident.module';
+import {CatProductModule} from '../cat-product/cat-product.module';
+import {CatBrandModule} from '../cat-brand/cat-brand.module';
+import {CatCustomerModule} from '../cat-customer/cat-customer.module';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import {SsiIncidentModule} from '../cat-incident/ssi-incident.module';
     RouterModule.forRoot(ROUTES_CONFIG),
     CatHomeModule,
     SsiOrganizationModule,
-    SsiIncidentModule
+    CatProductModule,
+    CatBrandModule,
+    CatCustomerModule
   ],
   exports: [RouterModule]
 })

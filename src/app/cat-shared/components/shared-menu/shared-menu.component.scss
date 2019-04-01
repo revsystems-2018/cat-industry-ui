@@ -1,4 +1,5 @@
 @import "../../../../assets/grid/ssi-flexbox";
+
 .nav-container {
   width: 100%;
 }
@@ -7,14 +8,18 @@
 .nav-container .nav-item {
   margin: 0;
   padding: 0;
-  background-color: #20272a;
+  background-color: #000000;
   cursor: pointer;
 }
 
 .nav-container .nav-list {
   list-style: none;
   width: 100%;
+}
 
+.img-thumbnail-logo {
+  max-width: 77px;
+  height: 55px;
 }
 
 .nav-container .nav-item {
@@ -32,7 +37,7 @@
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  background: #20272a;;
+  background: #000000;;
   color: #ffffff;
 
   -webkit-transition: all .25s ease;

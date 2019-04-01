@@ -1,0 +1,52 @@
+<form class="brand-create" [formGroup]="brandFormGroup" (ngSubmit)="onSubmit()">
+
+  <section class="form-group">
+    <label for="code">Code</label>
+    <input type="text"
+           class="form-control"
+           formControlName="code"
+           id="code"
+           aria-describedby="codeHelp"
+           placeholder="Code of the Brand"
+           autofocus>
+    <small id="codeHelp" class="form-text text-muted">Please put a significant code.</small>
+    <small class="form-text text-danger"
+           *ngIf="submitted && incidentFormGroup.get('name').errors">
+      This field is required.
+    </small>
+  </section>
+
+
+  <section class="form-group">
+    <label for="code">Name</label>
+    <input type="text"
+           class="form-control"
+           formControlName="name"
+           id="name"
+           aria-describedby="nameHelp"
+           placeholder="Name of the Brand"
+           autofocus>
+    <small id="nameHelp" class="form-text text-muted">Please put a significant name.</small>
+    <small class="form-text text-danger"
+           *ngIf="submitted && incidentFormGroup.get('name').errors">
+      This field is required.
+    </small>
+  </section>
+
+
+  <section class="form-group">
+    <label for="description">Description</label>
+    <textarea class="form-control"
+              formControlName="description"
+              id="description"
+              aria-describedby="descriptionHelp"
+              placeholder="Please enter a brief description"></textarea>
+    <small class="form-text text-danger"
+           *ngIf="submitted && incidentFormGroup.get('description').errors">
+      This field is required.
+    </small>
+  </section>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,16 +1,15 @@
 @import "./../../../assets/grid/ssi-ui-variables";
 @import "./../../../assets/grid/ssi-flexbox";
 
+:host{
+  background-color: #2f2f2f;
+}
+
 .home-root {
   display: flex;
   flex-direction: column;
   height: calc(100vh - #{$navHeightWithPadding});
   width: 100%;
-}
-
-.carousel-img {
-  width: calc(100vw - 2px);
-  height: calc(100vh - #{$navHeight});
 }
 
 .home-container {

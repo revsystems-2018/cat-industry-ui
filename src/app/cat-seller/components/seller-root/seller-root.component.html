@@ -1,0 +1,25 @@
+<article class="shared-full-view incident-root">
+  <section class="incident-root-menu">
+    <div class="list-group">
+      <span class="list-group-item text-center incident-root-menu-item-header">
+        Operations
+      </span>
+      <a routerLink="/sellers/list"
+         routerLinkActive="incident-root-menu-item-active"
+         class="list-group-item list-group-item-action incident-root-menu-item">Sellers</a>
+      <a routerLink="/sellers/create"
+         routerLinkActive="incident-root-menu-item-active"
+         class="list-group-item list-group-item-action incident-root-menu-item">Create an
+        Seller</a>
+      <button
+        class="list-group-item list-group-item-action incident-root-menu-item"
+        [disabled]="disabledReports">Generate Report
+      </button>
+    </div>
+  </section>
+  <section class="incident-root-body">
+    <router-outlet></router-outlet>
+  </section>
+</article>
+
+<img src="../../../../assets/images/Caro1.jpg" alt="background" class="shared-full-view incident-root-bg">

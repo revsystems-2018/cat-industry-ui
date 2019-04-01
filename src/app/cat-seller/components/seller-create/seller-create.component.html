@@ -1,0 +1,85 @@
+<form class="incident-create" [formGroup]="sellerFormGroup" (ngSubmit)="onSubmit()">
+
+  <section class="form-group">
+    <label for="description">Description</label>
+    <textarea class="form-control"
+              formControlName="description"
+              id="description"
+              aria-describedby="descriptionHelp"
+              placeholder="Please enter a brief description"></textarea>
+    <small class="form-text text-danger"
+           *ngIf="submitted && sellerFormGroup.get('description').errors">
+      This field is required.
+    </small>
+  </section>
+
+
+
+  <section class="form-group">
+    <label for="customerId">Customer</label>
+    <select class="form-control"
+            id="customerId"
+            formControlName="customerId">
+      <option *ngFor="let customer of customers"
+              value="{{customer.id}}">{{customer.firtsname +' '+ customer.lastName}}</option>
+    </select>
+    <small class="form-text text-danger"
+           *ngIf="submitted && sellerFormGroup.get('customerId').errors">
+      This field is required.
+    </small>
+  </section>
+
+
+  <section class="form-group">
+    <label for="productId">Product</label>
+    <select class="form-control"
+            id="productId"
+            formControlName="productId">
+      <option *ngFor="let product of products"
+              value="{{product.id}}">{{product.name}}</option>
+    </select>
+    <small class="form-text text-danger"
+           *ngIf="submitted && sellerFormGroup.get('productId').errors">
+      This field is required.
+    </small>
+  </section>
+
+  <section class="form-group">
+    <label for="quantity">Quantity</label>
+    <input type="text"
+           class="form-control"
+           formControlName="quantity"
+           id="quantity"
+           aria-describedby="quantityHelp"
+           placeholder="Stock of the product"
+           autofocus>
+    <small id="quantityHelp" class="form-text text-muted">Please put a significant stock.</small>
+    <small class="form-text text-danger"
+           *ngIf="submitted && sellerFormGroup.get('quantity').errors">
+      This field is required.
+    </small>
+  </section>
+
+
+  <section class="form-group">
+    <label for="price" class="control-label">Price</label>
+    <div class="form-group">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+        </div>
+        <input type="text"
+               class="form-control"
+               formControlName="price"
+               id="price"
+               aria-label="Amount (to the nearest dollar)"
+               placeholder="Price of the Product">
+        <div class="input-group-append">
+          <span class="input-group-text">.00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,131 @@
+<form class="incident-create" [formGroup]="productFormGroup" (ngSubmit)="onSubmit()">
+  <section class="form-group">
+    <label for="name">Name</label>
+    <input type="text"
+           class="form-control"
+           formControlName="name"
+           id="name"
+           aria-describedby="nameHelp"
+           placeholder="Name of the incident"
+           autofocus>
+    <small id="nameHelp" class="form-text text-muted">Please put a significant name.</small>
+    <small class="form-text text-danger"
+           *ngIf="submitted && productFormGroup.get('name').errors">
+      This field is required.
+    </small>
+  </section>
+
+
+  <section class="form-group">
+    <label for="description">Description</label>
+    <textarea class="form-control"
+              formControlName="description"
+              id="description"
+              aria-describedby="descriptionHelp"
+              placeholder="Please enter a brief description"></textarea>
+    <small class="form-text text-danger"
+           *ngIf="submitted && productFormGroup.get('description').errors">
+      This field is required.
+    </small>
+  </section>
+
+  <!--  <section class="form-group">
+      <label>Date</label>
+      <div class="input-group">
+        <input type="date"
+               class="form-control"
+               formControlName="date"
+               placeholder="yyyy-mm-dd"
+               name="date"
+               ngbDatepicker #d="ngbDatepicker"
+               readonly="true"
+               (focus)="d.open()">
+        <div class="input-group-append">
+          <button class="btn btn-light fa fa-calendar" (click)="d.toggle()" type="button"></button>
+        </div>
+      </div>
+      <small class="form-text text-danger"
+             *ngIf="submitted && incidentFormGroup.get('date').errors">
+        This field is required.
+      </small>
+    </section>-->
+
+
+  <section class="form-group">
+    <label for="brandId">Brand</label>
+    <select class="form-control"
+            id="brandId"
+            formControlName="brandId">
+      <option *ngFor="let brand of brands"
+              value="{{brand.id}}">{{brand.name}}</option>
+    </select>
+    <small class="form-text text-danger"
+           *ngIf="submitted && productFormGroup.get('brandId').errors">
+      This field is required.
+    </small>
+  </section>
+
+
+  <section class="form-group">
+    <label for="catalogId">Catalog</label>
+    <select class="form-control"
+            id="catalogId"
+            formControlName="catalogId">
+      <option *ngFor="let catalog of catalogs"
+              value="{{catalog.id}}">{{catalog.name}}</option>
+    </select>
+    <small class="form-text text-danger"
+           *ngIf="submitted && productFormGroup.get('catalogId').errors">
+      This field is required.
+    </small>
+  </section>
+
+  <section class="form-group">
+    <label for="stock">Stock</label>
+    <input type="text"
+           class="form-control"
+           formControlName="stock"
+           id="stock"
+           aria-describedby="stockHelp"
+           placeholder="Stock of the product"
+           autofocus>
+    <small id="stockHelp" class="form-text text-muted">Please put a significant stock.</small>
+    <small class="form-text text-danger"
+           *ngIf="submitted && productFormGroup.get('stock').errors">
+      This field is required.
+    </small>
+  </section>
+
+
+  <section class="form-group">
+    <label for="price" class="control-label">Price</label>
+    <div class="form-group">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+        </div>
+        <input type="text"
+               class="form-control"
+               formControlName="price"
+               id="price"
+               aria-label="Amount (to the nearest dollar)"
+               placeholder="Price of the Product">
+        <div class="input-group-append">
+          <span class="input-group-text">.00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="form-group" style="display: flex;">
+    <img *ngIf="this.image" [src]="this.image" alt="image" style="height: 200px; width: 200px;">
+    <div class="input-group mb-3">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="inputGroupFile02" (change)="onFileChange($event)">
+        <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

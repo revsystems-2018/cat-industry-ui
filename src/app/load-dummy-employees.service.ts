@@ -1,54 +1,86 @@
 import {Injectable, OnDestroy} from '@angular/core';
-import {EmployeesHttpService} from './cat-incident/services/employees-http-service';
+import {CatalogsHttpService} from './cat-product/services/catalogs-http-service';
 import {Subscription} from 'rxjs';
-import {Employee, EmployeeDTO} from './cat-incident/api/domain/Employee';
+import {Catalog, CatalogDTO} from './cat-product/api/domain/Catalog';
 import {unsubscribe} from './cat-shared/utils/unsubscribe.function';
-import {Incident, IncidentDTO} from './cat-incident/api/domain/Incident';
-import {IncidentTypeEnum} from './cat-incident/api/enum/incident-type.enum';
-import {IncidentSeverityEnum} from './cat-incident/api/enum/incident-severity.enum';
-import {IncidentsHttpService} from './cat-incident/services/incidents-http-service';
+import {Product, ProductDTO} from './cat-product/api/domain/Product';
+import {ProductsHttpService} from './cat-product/services/products-http-service';
+import {Brand, BrandDTO} from './cat-brand/api/brand';
+import {BrandsHttpService} from './cat-brand/services/brands-http-service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoadDummyEmployeesService implements OnDestroy {
 
-  private _employeesHttpServiceSubscription: Subscription;
-  private _employeesSubscription: Subscription;
-  private _incidentsSubscription: Subscription;
+  private _catalogsHttpServiceSubscription: Subscription;
+  private _brandsHttpServiceSubscription: Subscription;
+  private _catalogsSubscription: Subscription;
+  private _brandsSubscription: Subscription;
+  private _productsSubscription: Subscription;
 
-  private _dummyEmployees: EmployeeDTO[];
-  private _dummyIncidents: IncidentDTO[];
+  private _dummyCatalogs: CatalogDTO[];
+  private _dummyBrands: BrandDTO[];
+  private _dummyProducts: ProductDTO[];
 
-  constructor(private _employeesHttpService: EmployeesHttpService,
-              private _incidentHttpService: IncidentsHttpService) {
+  private brands: Brand[];
+  private catalogs: Catalog[];
+
+  constructor(private _catalogsHttpService: CatalogsHttpService,
+              private _brandsHttpService: BrandsHttpService,
+              private _productHttpService: ProductsHttpService) {
+    this.brands = [];
+    this.catalogs = [];
     this._initialize();
   }
 
   public ngOnDestroy(): void {
-    unsubscribe(this._employeesHttpServiceSubscription);
-    unsubscribe(this._employeesSubscription);
-    unsubscribe(this._incidentsSubscription);
+    unsubscribe(this._catalogsHttpServiceSubscription);
+    unsubscribe(this._brandsHttpServiceSubscription);
+    unsubscribe(this._catalogsSubscription);
+    unsubscribe(this._brandsSubscription);
+    unsubscribe(this._productsSubscription);
   }
 
   private _initialize(): void {
-    this._dummyEmployees = [
-      new EmployeeDTO('123456', 'Juan', 'Pinto', 'Av. america', '1234567'),
-      new EmployeeDTO('654321', 'Carlos', 'Terrazas', 'Quillacollo', '0987654'),
-      new EmployeeDTO('098765', 'Miguel', 'Terceros', 'Vinto', '1029384'),
-      new EmployeeDTO('567890', 'Claudia', 'Panozo', 'Av. Suecia', '6574839'),
-      new EmployeeDTO('102938', 'Lucia', 'Teran', 'Villa Granado', '1825467'),
-      new EmployeeDTO('564738', 'Pedro', 'Perez', 'Av. Blanco Galindo', '9015463'),
+    this._dummyCatalogs = [
+      new CatalogDTO('Tractors', 'tractors'),
+      new CatalogDTO('Motorbikers', 'motorbikers'),
+      new CatalogDTO('Loaders', 'loaders'),
+      new CatalogDTO('Spares', 'spares'),
     ];
 
-    this._employeesHttpServiceSubscription = this._employeesHttpService.doFindAll().subscribe(
-      (employees: Employee[]) => {
-        if (employees.length <= 1) {
-          this._dummyEmployees.forEach(
-            (employeeDTO: EmployeeDTO) => {
-              this._employeesSubscription = this._employeesHttpService.doInsert(employeeDTO).subscribe(
-                (employee: Employee) => {
-                  this._registerDummyIncidents(employee);
+    this._dummyBrands = [
+      new BrandDTO('CAT-85', 'CAT', 'catepillar'),
+      new BrandDTO('Toyota-82', 'Toyota', 'toyota Inc'),
+      new BrandDTO('Nissan-82', 'Nissan', 'Nissan Inc'),
+      new BrandDTO('Suzuki-82', 'Suzuki', 'Suzuki Inc')
+    ];
+
+    this._catalogsHttpServiceSubscription = this._catalogsHttpService.doFindAll().subscribe(
+      (catalogs: Catalog[]) => {
+        if (catalogs.length <= 1) {
+          this._dummyCatalogs.forEach(
+            (catalogDTO: CatalogDTO) => {
+              this._catalogsSubscription = this._catalogsHttpService.doInsert(catalogDTO).subscribe(
+                (catalog: Catalog) => {
+                  this.catalogs.push(catalog);
+                }
+              );
+            }
+          );
+        }
+      }
+    );
+
+    this._brandsHttpServiceSubscription = this._catalogsHttpService.doFindAll().subscribe(
+      (catalogs: Catalog[]) => {
+        if (catalogs.length <= 1) {
+          this._dummyCatalogs.forEach(
+            (brandDTO: BrandDTO) => {
+              this._brandsSubscription = this._brandsHttpService.doInsert(brandDTO).subscribe(
+                (brand: Brand) => {
+                  this.brands.push(brand);
                 }
               );
             }
@@ -58,28 +90,43 @@ export class LoadDummyEmployeesService implements OnDestroy {
     );
   }
 
-  private _registerDummyIncidents(employee: Employee): void {
-    this._dummyIncidents = [
-      new IncidentDTO(
+  private _registerDummyIncidents(catalog: Catalog[], brand: Brand[]): void {
+    this._dummyProducts = [
+      new ProductDTO(
         'Injury',
         'low Injury in neck',
-        new Date(),
-        IncidentTypeEnum.SLIGHT_INJURY,
-        IncidentSeverityEnum.LOW,
-        employee.id),
-      new IncidentDTO(
+        catalog[0].id,
+        brand[0].id,
+        10,
+        15588),
+      new ProductDTO(
         'Fracture',
         'Arm fracture',
-        new Date('2015-01-01'),
-        IncidentTypeEnum.FRACTURE,
-        IncidentSeverityEnum.HIGH,
-        employee.id)
+        catalog[1].id,
+        brand[1].id,
+        15,
+        25098),
+      new ProductDTO(
+        'Fracture 2',
+        'Arm fracture v2.0',
+        catalog[2].id,
+        brand[2].id,
+        16,
+        28098),
+
+      new ProductDTO(
+        'Fracture 3',
+        'Arm fracture v3.0',
+        catalog[3].id,
+        brand[3].id,
+        11,
+        18098),
     ];
 
-    this._dummyIncidents.forEach(
-      (dummyIncidentDTO: IncidentDTO) => {
-        this._incidentsSubscription = this._incidentHttpService.doInsert(dummyIncidentDTO).subscribe(
-          (incident: Incident) => {
+    this._dummyProducts.forEach(
+      (dummyProductDTO: ProductDTO) => {
+        this._productsSubscription = this._productHttpService.doInsert(dummyProductDTO).subscribe(
+          (product: Product) => {
           }
         );
       }
