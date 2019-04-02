@@ -13,7 +13,7 @@ export const BRAND_ROUTES_CONFIG: Routes = [
         path: '',
         children: [
           {path: 'create', component: BrandCreateComponent},
-          {path: 'list', component: BrandListComponent},
+          {path: 'list', component: BrandListComponent}
         ]
       },
       {path: '**', redirectTo: 'list'}

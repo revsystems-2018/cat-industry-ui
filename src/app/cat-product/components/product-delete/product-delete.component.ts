@@ -3,7 +3,7 @@
  */
 
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {ProductsHttpService} from '../../services/products-http-service';
+import {ProductsHttpService} from '../../services/products-http.service';
 import {Subscription} from 'rxjs';
 import {unsubscribe} from '../../../cat-shared/utils/unsubscribe.function';
 import {Product} from '../../api/domain/Product';

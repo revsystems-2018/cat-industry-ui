@@ -3,19 +3,19 @@
  */
 
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ProductsHttpService} from '../../services/products-http-service';
+import {ProductsHttpService} from '../../services/products-http.service';
 import {Subscription} from 'rxjs';
 import {unsubscribe} from '../../../cat-shared/utils/unsubscribe.function';
 import {Product, ProductDTO} from '../../api/domain/Product';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {CatalogsHttpService} from '../../services/catalogs-http-service';
+import {CatalogsHttpService} from '../../services/catalogs-http.service';
 import {Catalog} from '../../api/domain/Catalog';
 import {NgbDateAdapter, NgbDateNativeAdapter} from '@ng-bootstrap/ng-bootstrap';
 import {Router} from '@angular/router';
 import {ProductCreateService} from '../../services/product-create.service';
 import {Brand} from '../../../cat-brand/api/brand';
-import {BrandsHttpService} from '../../../cat-brand/services/brands-http-service';
-import {FileHttpService} from '../../services/file-http-service';
+import {BrandsHttpService} from '../../../cat-brand/services/brands-http.service';
+import {FileHttpService} from '../../services/file-http.service';
 import {FileUpload, FileUploadDTO} from '../../api/domain/FileUpload';
 
 @Component({

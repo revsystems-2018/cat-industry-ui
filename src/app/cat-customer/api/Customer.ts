@@ -1,7 +1,7 @@
 export class Customer {
   id: string;
   ci: string;
-  firtsname: string;
+  firstName: string;
   lastName: string;
   address: string;
   phone: number;
@@ -10,9 +10,9 @@ export class Customer {
 
 export class CustomerDTO {
 
-  constructor(ci: string, firtsname: string, lastName: string, address: string, phone: number, email: string) {
+  constructor(ci: string, firstName: string, lastName: string, address: string, phone: number, email: string) {
     this.ci = ci;
-    this.firtsname = firtsname;
+    this.firstName = firstName;
     this.lastName = lastName;
     this.address = address;
     this.phone = phone;
@@ -21,7 +21,7 @@ export class CustomerDTO {
 
   id: string;
   ci: string;
-  firtsname: string;
+  firstName: string;
   lastName: string;
   address: string;
   phone: number;

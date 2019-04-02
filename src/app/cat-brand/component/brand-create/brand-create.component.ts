@@ -2,9 +2,9 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Brand, BrandDTO} from '../../api/brand';
 import {Router} from '@angular/router';
-import {BrandsHttpService} from '../../services/brands-http-service';
+import {BrandsHttpService} from '../../services/brands-http.service';
 import {Subscription} from 'rxjs';
-import {BrandCreateService} from '../../services/brand-create-service';
+import {BrandCreateService} from '../../services/brand-create.service';
 import {unsubscribe} from '../../../cat-shared/utils/unsubscribe.function';
 
 @Component({

@@ -4,11 +4,11 @@ import {Subscription} from 'rxjs';
 import {Router} from '@angular/router';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {ExportAsConfig, ExportAsService, SupportedExtensions} from 'ngx-export-as';
-import {BrandsHttpService} from '../../services/brands-http-service';
+import {BrandsHttpService} from '../../services/brands-http.service';
 import {unsubscribe} from '../../../cat-shared/utils/unsubscribe.function';
 
 @Component({
-  selector: 'cat-incident-list',
+  selector: 'cat-brand-list',
   templateUrl: './brand-list.component.html',
   styleUrls: ['./brand-list.component.scss']
 })

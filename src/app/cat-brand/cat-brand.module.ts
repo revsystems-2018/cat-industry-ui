@@ -9,8 +9,8 @@ import {CatBrandComponent} from './cat-brand.component';
 import {BrandRoutesModule} from './routes/brand-routes.module';
 import {BrandRootComponent} from './component/brand-root/brand-root.component';
 import {BrandCreateComponent} from './component/brand-create/brand-create.component';
-import {BrandCreateService} from './services/brand-create-service';
-import {BrandsHttpService} from './services/brands-http-service';
+import {BrandCreateService} from './services/brand-create.service';
+import {BrandsHttpService} from './services/brands-http.service';
 import {BrandListComponent} from './component/brand-list/brand-list.component';
 
 @NgModule({

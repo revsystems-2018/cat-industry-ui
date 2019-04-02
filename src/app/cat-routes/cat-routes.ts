@@ -8,6 +8,7 @@ import {CatProductComponent} from '../cat-product/cat-product.component';
 import {CatBrandComponent} from '../cat-brand/cat-brand.component';
 import {CatCustomerComponent} from '../cat-customer/cat-customer.component';
 import {CatSellerComponent} from '../cat-seller/cat-seller.component';
+import {CatQuotationComponent} from '../cat-quotation/cat-quotation.component';
 
 export const ROUTES_CONFIG: Routes = [
   {path: 'home', component: CatHomeComponent},
@@ -16,6 +17,7 @@ export const ROUTES_CONFIG: Routes = [
   {path: 'brands', component: CatBrandComponent},
   {path: 'customers', component: CatCustomerComponent},
   {path: 'sellers', component: CatSellerComponent},
+  {path: 'quotations', component: CatQuotationComponent},
   {
     path: '**',
     redirectTo: 'home',

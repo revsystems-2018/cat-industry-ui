@@ -10,7 +10,7 @@ import {SellerCreateService} from '../../services/seller-create-service';
 import {Customer} from '../../../cat-customer/api/Customer';
 import {Product, ProductDTO} from '../../../cat-product/api/domain/Product';
 import {SellersHttpService} from '../../services/sellers-http-service';
-import {ProductsHttpService} from '../../../cat-product/services/products-http-service';
+import {ProductsHttpService} from '../../../cat-product/services/products-http.service';
 import {CustomersHttpService} from '../../../cat-customer/services/customers-http-service';
 import {unsubscribe} from '../../../cat-shared/utils/unsubscribe.function';
 import {FileUpload} from '../../../cat-product/api/domain/FileUpload';

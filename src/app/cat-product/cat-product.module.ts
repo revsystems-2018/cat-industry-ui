@@ -12,8 +12,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ProductRoutesModule} from './routes/product-routes.module';
 import {ExportAsModule} from 'ngx-export-as';
 
-import {ProductsHttpService} from './services/products-http-service';
-import {CatalogsHttpService} from './services/catalogs-http-service';
+import {ProductsHttpService} from './services/products-http.service';
+import {CatalogsHttpService} from './services/catalogs-http.service';
 import {ProductDeleteService} from './services/product-delete.service';
 import {ProductUpdateService} from './services/product-update.service';
 import {ProductReportService} from './services/product-report.service';
@@ -26,8 +26,8 @@ import {ProductCreateComponent} from './components/product-create/product-create
 import {ProductDeleteComponent} from './components/product-delete/product-delete.component';
 import {ProductUpdateComponent} from './components/product-update/product-update.component';
 import {ProductReportsComponent} from './components/product-reports/product-reports.component';
-import {BrandsHttpService} from '../cat-brand/services/brands-http-service';
-import {FileHttpService} from './services/file-http-service';
+import {BrandsHttpService} from '../cat-brand/services/brands-http.service';
+import {FileHttpService} from './services/file-http.service';
 
 
 @NgModule({

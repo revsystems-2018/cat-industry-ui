@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Brand} from '../../api/brand';
-import {BrandCreateService} from '../../services/brand-create-service';
-import {BrandsHttpService} from '../../services/brands-http-service';
+import {BrandCreateService} from '../../services/brand-create.service';
+import {BrandsHttpService} from '../../services/brands-http.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 

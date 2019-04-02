@@ -1,7 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Customer} from '../../../cat-customer/api/Customer';
 import {Subscription} from 'rxjs';
-import {CustomersHttpService} from '../../../cat-customer/services/customers-http-service';
 import {unsubscribe} from '../../../cat-shared/utils/unsubscribe.function';
 import {Brand} from '../../../cat-brand/api/brand';
 import {Seller} from '../../api/Seller';

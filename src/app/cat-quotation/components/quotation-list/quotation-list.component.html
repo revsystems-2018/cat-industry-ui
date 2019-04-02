@@ -1,0 +1,41 @@
+<article class="incident-list">
+
+  <table *ngIf="quotations.length > 0" id="table" class="table table-striped incident-table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Email</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Message</th>
+      <th scope="col">Options</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let quotation of quotations; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ quotation.email }}</td>
+      <td>{{ quotation.name }}</td>
+      <td>{{ quotation.productName }}</td>
+      <td>{{ quotation.message }}</td>
+      <td>
+        <div class="btn-group" role="group">
+          <button type="button"
+                  class="btn btn-outline-light fa fa-pencil"
+                  (click)="onUpdateAction($event, quotation)"></button>
+          <button type="button"
+                  class="btn btn-outline-warning fa fa-trash"
+                  (click)="onDeleteAction($event, quotation)"></button>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="quotations.length <= 0" class="jumbotron bg-transparent incidents-list-jumbotron">
+    <h1 class="display-4 text-center">Congratulations!</h1>
+    <hr class="my-4 incidents-list-jumbotron-divider">
+    <p class="lead">Your company doesn't have any Quotations until this moment.</p>
+  </div>
+
+</article>

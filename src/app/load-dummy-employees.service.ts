@@ -1,12 +1,12 @@
 import {Injectable, OnDestroy} from '@angular/core';
-import {CatalogsHttpService} from './cat-product/services/catalogs-http-service';
+import {CatalogsHttpService} from './cat-product/services/catalogs-http.service';
 import {Subscription} from 'rxjs';
 import {Catalog, CatalogDTO} from './cat-product/api/domain/Catalog';
 import {unsubscribe} from './cat-shared/utils/unsubscribe.function';
 import {Product, ProductDTO} from './cat-product/api/domain/Product';
-import {ProductsHttpService} from './cat-product/services/products-http-service';
+import {ProductsHttpService} from './cat-product/services/products-http.service';
 import {Brand, BrandDTO} from './cat-brand/api/brand';
-import {BrandsHttpService} from './cat-brand/services/brands-http-service';
+import {BrandsHttpService} from './cat-brand/services/brands-http.service';
 
 @Injectable({
   providedIn: 'root'

@@ -4,7 +4,7 @@
 
 import {Component, OnInit} from '@angular/core';
 import {ProductReportService} from '../../services/product-report.service';
-import {ProductsHttpService} from '../../services/products-http-service';
+import {ProductsHttpService} from '../../services/products-http.service';
 import {Product} from '../../api/domain/Product';
 import {ProductDeleteService} from '../../services/product-delete.service';
 import {ProductCreateService} from '../../services/product-create.service';

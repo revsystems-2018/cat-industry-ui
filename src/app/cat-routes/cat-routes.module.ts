@@ -11,6 +11,7 @@ import {CatProductModule} from '../cat-product/cat-product.module';
 import {CatBrandModule} from '../cat-brand/cat-brand.module';
 import {CatCustomerModule} from '../cat-customer/cat-customer.module';
 import {CatSellerModule} from '../cat-seller/cat-seller.module';
+import {CatQuotationModule} from '../cat-quotation/cat-quotation.module';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import {CatSellerModule} from '../cat-seller/cat-seller.module';
     CatProductModule,
     CatBrandModule,
     CatCustomerModule,
-    CatSellerModule
+    CatSellerModule,
+    CatQuotationModule
   ],
   exports: [RouterModule]
 })

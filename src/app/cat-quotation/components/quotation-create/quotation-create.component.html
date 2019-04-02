@@ -1,0 +1,68 @@
+<form class="brand-create" [formGroup]="quotationFormGroup" (ngSubmit)="onSubmit()">
+
+  <section class="form-group">
+    <label for="email">Email</label>
+    <input type="text"
+           class="form-control"
+           formControlName="email"
+           id="email"
+           aria-describedby="emailHelp"
+           placeholder="email of the Brand"
+           autofocus>
+    <small id="emailHelp" class="form-text text-muted">Please put a significant code.</small>
+    <small class="form-text text-danger"
+           *ngIf="submitted && quotationFormGroup.get('email').errors">
+      This field is required.
+    </small>
+  </section>
+
+
+  <section class="form-group">
+    <label for="name">Name</label>
+    <input type="text"
+           class="form-control"
+           formControlName="name"
+           id="name"
+           aria-describedby="nameHelp"
+           placeholder="Name of the Quotation"
+           autofocus>
+    <small id="nameHelp" class="form-text text-muted">Please put a significant name.</small>
+    <small class="form-text text-danger"
+           *ngIf="submitted && quotationFormGroup.get('name').errors">
+      This field is required.
+    </small>
+  </section>
+
+  <section class="form-group">
+    <label for="productName">Product Name</label>
+    <input type="text"
+           class="form-control"
+           formControlName="productName"
+           id="productName"
+           aria-describedby="productNameHelp"
+           placeholder="productName of the Quotation"
+           autofocus>
+    <small id="productNameHelp" class="form-text text-muted">Please put a significant productName.</small>
+    <small class="form-text text-danger"
+           *ngIf="submitted && quotationFormGroup.get('productName').errors">
+      This field is required.
+    </small>
+  </section>
+
+
+  <section class="form-group">
+    <label for="message">Messages</label>
+    <textarea class="form-control"
+              formControlName="message"
+              id="message"
+              aria-describedby="messageHelp"
+              placeholder="Please enter a brief message"></textarea>
+    <small class="form-text text-danger"
+           *ngIf="submitted && quotationFormGroup.get('message').errors">
+      This field is required.
+    </small>
+  </section>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
