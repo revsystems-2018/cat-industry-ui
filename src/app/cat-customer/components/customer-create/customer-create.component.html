@@ -1,0 +1,105 @@
+<form class="brand-create" [formGroup]="customerFormGroup" (ngSubmit)="onSubmit()">
+
+
+  <section class="form-group">
+    <label for="ci">First Name</label>
+    <input type="text"
+           class="form-control"
+           formControlName="ci"
+           id="ci"
+           aria-describedby="firstNameHelp"
+           placeholder="ci of the Customer"
+           autofocus>
+    <small id="ciHelp" class="form-text text-muted">Please put a significant code.</small>
+    <small class="form-text text-danger"
+           *ngIf="submitted && customerFormGroup.get('ci').errors">
+      This field is required.
+    </small>
+  </section>
+
+
+  <section class="form-group">
+    <label for="firstName">First Name</label>
+    <input type="text"
+           class="form-control"
+           formControlName="firstName"
+           id="firstName"
+           aria-describedby="firstNameHelp"
+           placeholder="firstName of the Customer"
+           autofocus>
+    <small id="firstNameHelp" class="form-text text-muted">Please put a significant code.</small>
+    <small class="form-text text-danger"
+           *ngIf="submitted && customerFormGroup.get('firstName').errors">
+      This field is required.
+    </small>
+  </section>
+
+  <section class="form-group">
+    <label for="lastName">Last Name</label>
+    <input type="text"
+           class="form-control"
+           formControlName="lastName"
+           id="lastName"
+           aria-describedby="lastNameHelp"
+           placeholder="lastName of the Customer"
+           autofocus>
+    <small id="lastNameHelp" class="form-text text-muted">Please put a significant lastName.</small>
+    <small class="form-text text-danger"
+           *ngIf="submitted && customerFormGroup.get('lastName').errors">
+      This field is required.
+    </small>
+  </section>
+
+  <section class="form-group">
+    <label for="address">Address</label>
+    <input type="text"
+           class="form-control"
+           formControlName="address"
+           id="address"
+           aria-describedby="addressHelp"
+           placeholder="address of the Customer"
+           autofocus>
+    <small id="addressHelp" class="form-text text-muted">Please put a significant address.</small>
+    <small class="form-text text-danger"
+           *ngIf="submitted && customerFormGroup.get('address').errors">
+      This field is required.
+    </small>
+  </section>
+
+
+  <section class="form-group">
+    <label for="phone">Phone</label>
+    <input type="text"
+           class="form-control"
+           formControlName="phone"
+           id="phone"
+           aria-describedby="phoneHelp"
+           placeholder="phone of the Brand"
+           autofocus>
+    <small id="phoneHelp" class="form-text text-muted">Please put a significant name.</small>
+    <small class="form-text text-danger"
+           *ngIf="submitted && customerFormGroup.get('phone').errors">
+      This field is required.
+    </small>
+  </section>
+
+
+  <section class="form-group">
+    <label for="email">Email</label>
+    <input type="text"
+           class="form-control"
+           formControlName="email"
+           id="email"
+           aria-describedby="emailHelp"
+           placeholder="email of the Customer"
+           autofocus>
+    <small id="emailHelp" class="form-text text-muted">Please put a significant email.</small>
+    <small class="form-text text-danger"
+           *ngIf="submitted && customerFormGroup.get('email').errors">
+      This field is required.
+    </small>
+  </section>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -11,7 +11,7 @@
            autofocus>
     <small id="codeHelp" class="form-text text-muted">Please put a significant code.</small>
     <small class="form-text text-danger"
-           *ngIf="submitted && incidentFormGroup.get('name').errors">
+           *ngIf="submitted && brandFormGroup.get('name').errors">
       This field is required.
     </small>
   </section>
@@ -28,7 +28,7 @@
            autofocus>
     <small id="nameHelp" class="form-text text-muted">Please put a significant name.</small>
     <small class="form-text text-danger"
-           *ngIf="submitted && incidentFormGroup.get('name').errors">
+           *ngIf="submitted && brandFormGroup.get('name').errors">
       This field is required.
     </small>
   </section>
@@ -42,7 +42,7 @@
               aria-describedby="descriptionHelp"
               placeholder="Please enter a brief description"></textarea>
     <small class="form-text text-danger"
-           *ngIf="submitted && incidentFormGroup.get('description').errors">
+           *ngIf="submitted && brandFormGroup.get('description').errors">
       This field is required.
     </small>
   </section>

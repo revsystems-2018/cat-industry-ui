@@ -10,7 +10,7 @@ import {SsiOrganizationModule} from '../cat-organization/ssi-organization.module
 import {CatProductModule} from '../cat-product/cat-product.module';
 import {CatBrandModule} from '../cat-brand/cat-brand.module';
 import {CatCustomerModule} from '../cat-customer/cat-customer.module';
-
+import {CatSellerModule} from '../cat-seller/cat-seller.module';
 
 @NgModule({
   imports: [
@@ -19,7 +19,8 @@ import {CatCustomerModule} from '../cat-customer/cat-customer.module';
     SsiOrganizationModule,
     CatProductModule,
     CatBrandModule,
-    CatCustomerModule
+    CatCustomerModule,
+    CatSellerModule
   ],
   exports: [RouterModule]
 })

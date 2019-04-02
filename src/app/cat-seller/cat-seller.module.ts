@@ -2,7 +2,6 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
-import {CustomerRoutesModule} from '../cat-customer/routes/customer-routes.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ExportAsModule} from 'ngx-export-as';
@@ -12,6 +11,7 @@ import {SellersHttpService} from './services/sellers-http-service';
 import {SellerCreateService} from './services/seller-create-service';
 import {SellerListComponent} from './components/seller-list/seller-list.component';
 import {SellerCreateComponent} from './components/seller-create/seller-create.component';
+import {SellerRoutesModule} from './routes/seller-routes.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import {SellerCreateComponent} from './components/seller-create/seller-create.co
     BrowserModule,
     CommonModule,
     HttpClientModule,
-    CustomerRoutesModule,
+    SellerRoutesModule,
     FormsModule,
     ReactiveFormsModule,
     NgbModule,

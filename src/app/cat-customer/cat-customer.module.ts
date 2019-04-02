@@ -11,12 +11,14 @@ import {CustomerListComponent} from './components/customer-list/customer-list.co
 import {CustomersHttpService} from './services/customers-http-service';
 import {CustomerCreateService} from './services/customer-create-service';
 import {CustomerRoutesModule} from './routes/customer-routes.module';
+import {CustomerCreateComponent} from './components/customer-create/customer-create.component';
 
 @NgModule({
   declarations: [
     CatCustomerComponent,
     CustomerRootComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    CustomerCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import {CustomerRoutesModule} from './routes/customer-routes.module';
   exports: [
     CatCustomerComponent,
     CustomerRootComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    CustomerCreateComponent
   ],
   providers: [
     CustomerCreateService,

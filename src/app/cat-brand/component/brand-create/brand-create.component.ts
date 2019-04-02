@@ -48,7 +48,7 @@ export class BrandCreateComponent implements OnInit, OnDestroy {
       (brand: Brand) => {
         this.brand = brand;
         this._brandCreateService.subject.next(brand);
-        this._router.navigate(['/brand/list']);
+        this._router.navigate(['/brands/list']);
       }
     );
   }

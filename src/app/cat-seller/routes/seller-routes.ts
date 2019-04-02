@@ -1,6 +1,7 @@
 import {Routes} from '@angular/router';
-import {CustomerListComponent} from '../../cat-customer/components/customer-list/customer-list.component';
 import {SellerRootComponent} from '../components/seller-root/seller-root.component';
+import {SellerCreateComponent} from '../components/seller-create/seller-create.component';
+import {SellerListComponent} from '../components/seller-list/seller-list.component';
 
 export const SELLER_ROUTES_CONFIG: Routes = [
   {
@@ -10,7 +11,8 @@ export const SELLER_ROUTES_CONFIG: Routes = [
       {
         path: '',
         children: [
-          {path: 'list', component: CustomerListComponent},
+          {path: 'list', component: SellerListComponent},
+          {path: 'create', component: SellerCreateComponent},
         ]
       },
       {path: '**', redirectTo: 'list'}
